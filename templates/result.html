@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+
+<body class="result">
+<div class="container">
+
+<div class="row">
+    <h2 class="col-12">Result</h2>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <img  src="{{ img }}" alt="image"><br>
+    </div>
+    <div class="col-md-6">
+        {% for color in colours %}
+            <h3 id="color"
+        style="background-color:rgb{{ color[0] }}">
+        {{ color[1] }}
+            </h3>
+        {% endfor %}
+        <a href="static/images/colours.jpg" class="download" download>Download File</a>
+    </div>
+</div>
+
+
+<div class="row">
+    <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="window.location.href='{{ url_for('home')}}';">Back</button>
+</div>
+</div>
+
+</body>
+
+
+</html>

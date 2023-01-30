@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body class="home">
+<div class="box">
+    <h1>Upload an image to create a colour palette</h1>
+    <form action = "{{ url_for('result') }}" method = "POST" enctype = "multipart/form-data">
+        <div class="input-file-container">
+            <label>Chose an image:</label>
+            <br><br>
+            <input class="input-file" id="file" type="file" name="file" >
+            <br><br>
+            <label>How many colours would you like?</label>
+            <br><br>
+            <input class="col_num" type="number" name="num" >
+            <br><br>
+        </div>
+        <input type = "submit" class="submit_button"/>
+
+    </form>
+    </div>
+</body>
+
+
+</html>
